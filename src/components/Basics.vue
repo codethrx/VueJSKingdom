@@ -30,7 +30,7 @@ export default {
       //event handlers
       val: "Tony",
       c: 1,
-      formdata: { name: "", description: "" },
+      formdata: { name: "", description: "", age: 0 },
     };
   },
   methods: {
@@ -43,6 +43,10 @@ export default {
     },
     consoleInputVal(e) {
       console.log(e.target.value);
+    },
+    sub(e) {
+      e.preventDefault();
+      console.log(this.formdata.name);
     },
   },
 };
@@ -126,9 +130,11 @@ export default {
   <div>
     Form Handling
     <h1>{{ formdata }}</h1>
-    <form>
-      <input placeholder="name" v-model="formdata.name" />
+    <form @submit="sub">
+      <input placeholder="name" v-model.trim="formdata.name" />
       <textarea placeholder="description" v-model="formdata.description" />
+      <input type="number" v-model.number="formdata.age" />
+      <button>S</button>
     </form>
   </div>
 </template>
