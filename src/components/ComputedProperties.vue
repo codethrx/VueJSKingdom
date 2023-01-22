@@ -1,5 +1,6 @@
 <template>
   <h1>Computed Properties</h1>
+
   <h2>{{ fullname }}</h2>
   <button @click="prices.push(50)">add to prices arr</button>
   <h2>Total for laptops is : {{ total }}</h2>
@@ -13,10 +14,14 @@
   <input v-model="movie" />
   <input v-model="movieCreds.movieRating" />
   <button @click="movies.push('Wonder Woman')">Add</button>
+  <FirstComponent title="First" age="0" />
+  <FirstComponent :title="title" :age="age" />
 </template>
 <script>
+import FirstComponent from "./FirstComponent.vue";
 export default {
   name: "ComputedProps",
+  components: { FirstComponent },
   data() {
     return {
       fname: "Tatheer ",
@@ -27,6 +32,8 @@ export default {
       movie: "Batman",
       movieCreds: { movieRating: 0 },
       movies: ["Batman", "Superman"],
+      title: "Second",
+      age: 2,
     };
   },
   methods: {
