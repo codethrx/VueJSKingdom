@@ -4,6 +4,8 @@
   <keep-alive>
     <component :is="tab"></component>
   </keep-alive>
+
+  <teleport to="#lol">Lol</teleport>
 </template>
 <script>
 import A from "./A.vue";

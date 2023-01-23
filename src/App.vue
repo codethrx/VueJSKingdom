@@ -14,6 +14,7 @@
   </Card> -->
   <h1>Dynamic Components.</h1>
   <DynamicComponent />
+  <div id="lol"></div>
 </template>
 <script>
 import Card from "./slots/Card.vue";
