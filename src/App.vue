@@ -1,5 +1,5 @@
 <template>
-  <h1>Vue basics.....{{ name }}</h1>
+  <!-- <h1>Vue basics.....{{ name }}</h1>
   <Card :id="1">
     <p>Hi</p>
     <p>Hi............</p>
@@ -11,17 +11,20 @@
     <template v-slot:header>Header</template>
     Content
     <template v-slot:footer>Footer</template>
-  </Card>
+  </Card> -->
+  <h1>Dynamic Components.</h1>
+  <DynamicComponent />
 </template>
 <script>
 import Card from "./slots/Card.vue";
+import DynamicComponent from "./dynamicComponents/DynamicComponents.vue";
 export default {
   data() {
     return {
       name: "",
     };
   },
-  components: { Card },
+  components: { Card, DynamicComponent },
 
   methods: {},
 };
