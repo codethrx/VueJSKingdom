@@ -1,33 +1,21 @@
 <template>
-  <!-- <h1>Vue basics.....{{ name }}</h1>
-  <Card :id="1">
-    <p>Hi</p>
-    <p>Hi............</p>
-  </Card>
-  <Card :id="2">
-    <h4>Be bold change the game XD</h4>
-  </Card>
-  <Card>
-    <template v-slot:header>Header</template>
-    Content
-    <template v-slot:footer>Footer</template>
-  </Card> -->
-  <h1>Dynamic Components.</h1>
-  <DynamicComponent />
-  <div id="lol"></div>
+  {{ name }}
 </template>
 <script>
-import Card from "./slots/Card.vue";
-import DynamicComponent from "./dynamicComponents/DynamicComponents.vue";
+import { ref, reactive, toRefs } from "vue";
 export default {
-  data() {
-    return {
-      name: "",
-    };
+  //refs
+  // setup() {
+  //   const name = ref("Clark");
+  //   setTimeout(() => (name.value = "Bruce"), 2000);
+  //   return { name };
+  // },
+  //reactive
+  setup() {
+    const name = reactive({ name: "Clark" });
+    setTimeout(() => (name.name = "Bruce"), 2000);
+    return toRefs(name);
   },
-  components: { Card, DynamicComponent },
-
-  methods: {},
 };
 </script>
 <style scoped></style>
