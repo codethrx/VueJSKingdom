@@ -1,32 +1,29 @@
 <template>
-  <!-- <Basics counter="0" /> -->
-  <h1>{{ val }}</h1>
-  <!-- <ComputedProps /> -->
-  <button @click="pop = true">Open</button>
-  <Popup v-show="pop" @close="closePop" />
+  <h1>Vue basics.....{{ name }}</h1>
+  <Card :id="1">
+    <p>Hi</p>
+    <p>Hi............</p>
+  </Card>
+  <Card :id="2">
+    <h4>Be bold change the game XD</h4>
+  </Card>
+  <Card>
+    <template v-slot:header>Header</template>
+    Content
+    <template v-slot:footer>Footer</template>
+  </Card>
 </template>
 <script>
-import Basics from "./components/Basics.vue";
-import Popup from "./components/Popup.vue";
-import ComputedProps from "./components/ComputedProperties.vue";
-console.log();
+import Card from "./slots/Card.vue";
 export default {
   data() {
-    return { val: "Hola", pop: false };
-  },
-  components: { Basics, ComputedProps, Popup },
-  provide() {
     return {
-      username: this.val,
-      mail: "abc@gmail.com",
+      name: "",
     };
   },
-  methods: {
-    closePop() {
-      this.pop = false;
-      console.log("Clickd");
-    },
-  },
+  components: { Card },
+
+  methods: {},
 };
 </script>
 <style scoped></style>
