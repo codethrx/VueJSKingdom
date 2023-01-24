@@ -7,6 +7,7 @@ import About from "./views/About.vue";
 import Id from "./views/Id.vue";
 import Home from "./views/Home.vue";
 import store from "./context/store";
+import { createPinia } from "pinia";
 const routes = [
   { path: "/", component: Home },
   { path: "/about", component: About },
@@ -18,4 +19,8 @@ const router = createRouter({
   routes,
 });
 
-createApp(App).provide("store", store).use(router).mount("#app");
+createApp(App)
+  .use(createPinia())
+  .provide("store", store)
+  .use(router)
+  .mount("#app");
