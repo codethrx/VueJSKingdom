@@ -1,32 +1,12 @@
 <template>
-  <!-- <Basics counter="0" /> -->
-  <h1>{{ val }}</h1>
-  <!-- <ComputedProps /> -->
-  <button @click="pop = true">Open</button>
-  <Popup v-show="pop" @close="closePop" />
+  <h1>State Management in View</h1>
+  <router-link to="/about/123"> User </router-link>
+
+  <router-view></router-view>
 </template>
 <script>
-import Basics from "./components/Basics.vue";
-import Popup from "./components/Popup.vue";
-import ComputedProps from "./components/ComputedProperties.vue";
-console.log();
 export default {
-  data() {
-    return { val: "Hola", pop: false };
-  },
-  components: { Basics, ComputedProps, Popup },
-  provide() {
-    return {
-      username: this.val,
-      mail: "abc@gmail.com",
-    };
-  },
-  methods: {
-    closePop() {
-      this.pop = false;
-      console.log("Clickd");
-    },
-  },
+  setup() {},
 };
 </script>
 <style scoped></style>
