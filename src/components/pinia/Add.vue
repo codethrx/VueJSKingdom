@@ -1,7 +1,7 @@
 <template>
-  <h1>Add Item{{ val }}</h1>
+  <h1>Add Item...</h1>
   <input placeholder="Add" v-model="val" />
-  <button :click="add(val)">Add</button>
+  <button @click="add(val)">Add</button>
 </template>
 <script>
 import { useStore } from "../../pinia/store";
